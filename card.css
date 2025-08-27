@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  width: 1000px;   /* bigger card */
+  max-width: 95%;  /* keeps it responsive on smaller screens */
+  height: 400px;   /* increase height */
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(232, 158, 247, 0.3);
+}
+
+.card-info {
+  flex: 1;
+  padding: 40px;  /* more spacing inside */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-info h2 {
+  font-size: 28px;  /* larger text */
+}
+
+.card-info h3 {
+  font-size: 22px;
+}
+
+.card-img {
+  flex: 1.2;   /* make image side a little bigger */
+  background: url("sayara.jpeg") no-repeat center center/cover;
+}

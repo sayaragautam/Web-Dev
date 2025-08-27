@@ -1,0 +1,42 @@
+.para {
+    font-size: 16px;
+    color: #ee312f;
+    font-style: italic;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+}
+.para-pink {
+    font-size: 16px;
+    color: #f9eff5;
+    padding: 2rem;
+    font-family: poppins, sans-serif;
+    font-weight: 600;
+    background-color: #f46bbd;
+    font-style: italic;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border: 2px solid red;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+    
+}
+
+.hi {
+    font-size: 16px;
+    color: #f9eff5;
+    padding: 2rem;
+    font-family: poppins, sans-serif;
+    font-weight: 1000;
+    background-color: #febae3;
+    font-style: italic;
+    padding-left: 100px;
+    margin-bottom: 15px;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    margin-right: 100px ;
+    margin-left: 100px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+}
