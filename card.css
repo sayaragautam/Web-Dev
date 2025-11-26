@@ -1,32 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding-top: 20px;
+}
+
+/* Form Styling */
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: left;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6a0dad;
+}
+
+/* ID Card Styling */
 .card {
   display: flex;
-  width: 1000px;   /* bigger card */
-  max-width: 95%;  /* keeps it responsive on smaller screens */
-  height: 400px;   /* increase height */
+  width: 800px;
+  height: 400px;
   background: #000;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(232, 158, 247, 0.3);
-}
-
-.card-info {
-  flex: 1;
-  padding: 40px;  /* more spacing inside */
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-info h2 {
-  font-size: 28px;  /* larger text */
-}
-
-.card-info h3 {
-  font-size: 22px;
+  margin-top: 30px;
 }
 
 .card-img {
-  flex: 1.2;   /* make image side a little bigger */
-  background: url("sayara.jpeg") no-repeat center center/cover;
+  flex: 1;
+  background-color: #333; /* Default background if no image */
+  border-right: 3px solid white;
 }
+
+.card-info {
+  flex: 2;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-info h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.card-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-info p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+

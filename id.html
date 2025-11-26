@@ -1,26 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> <!-- sets text to display properly -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes it mobile-friendly -->
-  <title>ID Card</title> <!-- page title -->
-  <link rel="stylesheet" href="card.css"> <!-- connect to CSS file -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ID Card Generator</title>
+  <link rel="stylesheet" href="card.css" />
 </head>
 <body>
-  <!-- main card box -->
-  <div class="card">
 
-    <!-- left side: info/text -->
-    <div class="card-info">
-      <h2>Sayara Gautam</h2> <!-- your name -->
-      <h3>Student</h3> <!-- your role/job -->
-      <p>Email: sayara@gmail.com</p> <!-- your email -->
-      <p>Phone: 981111111111</p> <!-- your phone -->
-    </div>
+  <!-- Form Container -->
+  <div class="form-container" id="formContainer">
+    <h2>Enter Your Details</h2>
+    <form id="idForm">
+      <label>Name:</label>
+      <input type="text" id="name" required />
 
-    <!-- right side: photo (background image from CSS) -->
-    <div class="card-img"></div>
+      <label>Role:</label>
+      <input type="text" id="role" required />
 
+      <label>Email:</label>
+      <input type="email" id="email" required />
+
+      <label>Phone:</label>
+      <input type="text" id="phone" required />
+
+      <label>Profile Image URL:</label>
+      <input type="text" id="profileImage" placeholder="Paste image link" />
+
+      <button type="submit">Generate ID Card</button>
+    </form>
   </div>
+
+  <!-- ID Card (Hidden Initially) -->
+  <div class="card" id="idCard" style="display:none;">
+    <div class="card-img" id="imgBox"></div>
+
+    <div class="card-info">
+      <h2 id="displayName"></h2>
+      <h3 id="displayRole"></h3>
+      <p id="displayEmail"></p>
+      <p id="displayPhone"></p>
+    </div>
+  </div>
+
+<script>
+  const form = document.getElementById("idForm");
+  const formContainer = document.getElementById("formContainer");
+  const idCard = document.getElementById("idCard");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Fill card details
+    document.getElementById("displayName").textContent = document.getElementById("name").value;
+    document.getElementById("displayRole").textContent = document.getElementById("role").value;
+    document.getElementById("displayEmail").textContent = "📧 " + document.getElementById("email").value;
+    document.getElementById("displayPhone").textContent = "📞 " + document.getElementById("phone").value;
+
+    // Get image URL
+    const imageUrl = document.getElementById("profileImage").value;
+    const imgDiv = document.getElementById("imgBox");
+    imgDiv.style.backgroundImage = `url('${imageUrl}')`;
+    imgDiv.style.backgroundSize = "cover";
+    imgDiv.style.backgroundPosition = "center";
+
+    // Hide form and show card
+    formContainer.style.display = "none";
+    idCard.style.display = "flex";
+  });
+</script>
+
 </body>
 </html>
