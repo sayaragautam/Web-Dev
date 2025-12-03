@@ -31,16 +31,15 @@
     </form>
   </div>
 
-  <!-- ID Card (Hidden Initially) -->
+  <!-- ⭐ OLD ORIGINAL ID CARD (exact design, only hidden) -->
   <div class="card" id="idCard" style="display:none;">
-    <div class="card-img" id="imgBox"></div>
-
     <div class="card-info">
-      <h2 id="displayName"></h2>
-      <h3 id="displayRole"></h3>
-      <p id="displayEmail"></p>
-      <p id="displayPhone"></p>
+      <h2 id="displayName">Sayara Gautam</h2>
+      <h3 id="displayRole">Student</h3>
+      <p id="displayEmail">Email: example@gmail.com</p>
+      <p id="displayPhone">Phone: 0000000000</p>
     </div>
+    <div class="card-img" id="imgBox"></div>
   </div>
 
 <script>
@@ -54,17 +53,21 @@
     // Fill card details
     document.getElementById("displayName").textContent = document.getElementById("name").value;
     document.getElementById("displayRole").textContent = document.getElementById("role").value;
-    document.getElementById("displayEmail").textContent = "📧 " + document.getElementById("email").value;
-    document.getElementById("displayPhone").textContent = "📞 " + document.getElementById("phone").value;
+    document.getElementById("displayEmail").textContent = "Email: " + document.getElementById("email").value;
+    document.getElementById("displayPhone").textContent = "Phone: " + document.getElementById("phone").value;
 
-    // Get image URL
+    // Insert image
     const imageUrl = document.getElementById("profileImage").value;
     const imgDiv = document.getElementById("imgBox");
-    imgDiv.style.backgroundImage = `url('${imageUrl}')`;
+    
+    if (imageUrl.trim() !== "") {
+      imgDiv.style.backgroundImage = `url('${imageUrl}')`;
+    }
+
     imgDiv.style.backgroundSize = "cover";
     imgDiv.style.backgroundPosition = "center";
 
-    // Hide form and show card
+    // Hide form → show ID card
     formContainer.style.display = "none";
     idCard.style.display = "flex";
   });
