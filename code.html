@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML</title>
+  <link rel="stylesheet" href="./code.css" />
+</head>
+<body>
+  <h1 id="title">Hello World</h1>
+  <button id="btnRed">Red</button>
+  <button id="btnPink">Pink</button>
+  <button id="btnPurple">Purple</button>
+
+  <div class="wrapper"></div>
+
+  <script>
+    const title = document.getElementById('title');
+
+    const redBtn = document.getElementById('btnRed');
+    redBtn.addEventListener('click', () => {
+      title.classList.add('text-red');
+    });
+
+    const pinkBtn = document.getElementById('btnPink');
+    pinkBtn.addEventListener('click', () => {
+      title.classList.add('text-pink');
+    });
+
+    const purpleBtn = document.getElementById('btnPurple');
+    purpleBtn.addEventListener('click', () => {
+      title.classList.add('text-purple');
+    });
+
+    const wrapper = document.querySelector('.wrapper');
+    const inner = document.createElement('div');
+    inner.className = 'inner';
+    inner.textContent = 'This is inner text';
+    wrapper.append(inner);
+  </script>
+</body>
+</html>

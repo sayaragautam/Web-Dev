@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ya.js"></script>
+</head>
+<body>
+    <div id="test">Hello</div>
+    <button id="playVideoButton">Play Video</button>
+    <button id="pauseVideoButton">Pause Video</button>
+    <video id="video" height = "200px", width ="200px" src="./video.mp4"></video>
+
+    <script>
+        const videoElement = document.getElementById('video');
+
+        document.getElementById('playVideoButton').addEventListener('click', function() {
+            videoElement.play();
+        });
+        document.getElementById('pauseVideoButton').addEventListener('click', function() {
+            videoElement.pause();
+        });
+        videoElement.addEventListener('mouseover', function() {
+            videoElement.play();
+        });
+        videoElement.addEventListener('mouseleave', function() {
+            videoElement.pause();
+        });
+
+    </script>
+    </script>
+    </script>
+</body>
+</html>
